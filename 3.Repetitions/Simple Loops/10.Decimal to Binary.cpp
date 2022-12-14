@@ -13,4 +13,5 @@ int main()
 		q=q/2;
 	}
 	cout<<result;
+	return 0;
 }
