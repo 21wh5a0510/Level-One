@@ -3,31 +3,35 @@ using namespace std;
 
 bool checkPassword(string s)
 {
-	if(s.length()==8)
+	if(s.length()>=8)
 	{
-		int x=0,y=0,z=0;
+		int w=0,x=0,y=0,z=0;
 		for(int i=0;i<s.length();i++)
 		{
 			if(s[i]>='A'&&s[i]<='Z')
 			{
 				x=1;
 			}
-			if(s[i]>='a'&&s[i]<='z')
+			else if(s[i]>='a'&&s[i]<='z')
 			{
 				y=1;
 			}
-			if(s[i]>='0'&&s[i]<='9')
+			else if(s[i]>='0'&&s[i]<='9')
 			{
 				z=1;
 			}
+			else
+			{
+				w=1;
+			}
 		}
-		if(x&&y&&z)
+		if(x&&y&&z&&w)
 		{
-			return true;
+			return false;
 		}
 		else
 		{
-			return false;
+			return true;
 		}
 	}
 	else
@@ -90,7 +94,7 @@ bool isDigit(char c)
 }
 bool checkPassword(string s)
 {
-	if(s.length()==8)
+	if(s.length()>=8)
 	{
 		int x=0,y=0,z=0;
 		for(int i=0;i<s.length();i++)
