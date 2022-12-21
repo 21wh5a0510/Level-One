@@ -16,9 +16,10 @@ int main()
 	int k;
 	cout<<"Enter String:";
 	cin>>s;
+	int length=s.length();
 	cout<<"Enter key";
 	cin>>k;
-	for(int i=0;i<s.length();i++)
+	for(int i=0;i<length;i++)
 	{
 		if(s[i]>='a'&&s[i]<='z')
 		{
@@ -36,7 +37,7 @@ int main()
 		}
 	}
 	cout<<"Encrypted message is "<<encrypt<<"\n";
-	for(int i=0;i<encrypt.length();i++)
+	for(int i=0;i<length;i++)
 	{
 		if(encrypt[i]>='a'&&encrypt[i]<='z')
 		{
