@@ -6,10 +6,10 @@ int main()
 	int dec,sum=0,a=0;
 	cout<<"Enter Binary Number:";
 	cin>>s;
-	for(int i=s.length()-1;i>=0;i--)
+	int length=s.length();
+	for(int i=length-1;i>=0;i--)
 	{
-		if(s[i]-'0'
-		==1)
+		if(s[i]-'0'==1)
 		{
 			dec=pow(2,a);
 			a++;
