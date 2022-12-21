@@ -3,7 +3,8 @@ using namespace std;
 
 bool checkPassword(string s)
 {
-	if(s.length()>=8)
+	int length=s.length();
+	if(length>=8)
 	{
 		int w=0,x=0,y=0,z=0;
 		for(int i=0;i<s.length();i++)
@@ -94,7 +95,8 @@ bool isDigit(char c)
 }
 bool checkPassword(string s)
 {
-	if(s.length()>=8)
+int length=s.length();
+	if(length>=8)
 	{
 		int x=0,y=0,z=0;
 		for(int i=0;i<s.length();i++)
