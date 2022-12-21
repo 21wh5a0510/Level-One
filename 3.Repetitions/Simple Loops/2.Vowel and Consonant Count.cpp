@@ -8,7 +8,8 @@ int main()
 	int vcount=0,ccount=0;
 	cout<<"Enter string:";
 	cin>>s;
-	for(int i=0;i<s.length();i++)
+	int length=s.length();
+	for(int i=0;i<length;i++)
 	{
 		char a=tolower(s[i]);
 		if(a=='a'||a=='e'||a=='i'||a=='o'||a=='u')
