@@ -2,10 +2,11 @@
 using namespace std;
 double approximatePI(int n)
 {
-	int sign=1,s=0;
-	for(int i=1,d=2;i<=n;i++,d+2)
+	double sign=1,s=0,d=2;
+	for(int i=1;i<=n;i++)
 	{
 		s+=1/(d*(d+1)*(d+2))*sign;
+		d+=2;
 		sign*=-1;
 	}
 	return s*4+3;
