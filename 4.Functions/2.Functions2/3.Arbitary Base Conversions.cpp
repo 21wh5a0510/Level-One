@@ -1,39 +1,58 @@
 #include<bits/stdc++.h>
+#include<string.h>
 using namespace std;
-int convertsbase(int x,sbase1)
+int convertDec(string n,int sbase)
 {
-	int sum=0,a=0;
-	while(x>0)
+	int dec=0,i=0,rem=0;
+	int num=stoi(n);
+	while(num!=0)
 	{
-		int rem=x%10;
-		sum+=rem*pow(sbase1,a);
-		a++;
+		rem=num%10;
+		num=num/10;
+		dec+=rem*pow(sbase,i);
+		i++;
 	}
-	return sum;
+	return dec;
 }
-string converttbase(string x,tbase1)
+string convertBase(string n,int sbase,int tbase)
 {
+	int rem;
 	string res="";
-	for(int i=x.length()-1;i>=0;i--)
+	int num=convertDec(n,sbase);
+	while(num>0)
 	{
-		
+		rem=num%tbase;
+		if(rem>9)
+		{
+			rem=(char)rem-10+'A';
+			res=to_string(rem)+res;
+		}
+		else
+		{
+			res=to_string(rem)+res;
+		}
+		num/=tbase;
 	}
+	return res;
 }
-string convertBase(int n,int sbase,int tbase)
-{
-	int num;
-	num=convertsbase(n,sbase);
-	return converttbase(num,tbase);
-}
+
 int main()
 {
-	int sb,tb,number;
-	cout<<"Enter source base:";
-	cin>>sb;
+	string number;
+	int sb,tb;
 	cout<<"Enter Number:";
 	cin>>number;
+	cout<<"Enter source base:";
+	cin>>sb;
 	cout<<"Enter target base:";
 	cin>>tb;
-	cout<<"The number is "<<convertBase(number,sb,tb);
+	if(sb>=2&&sb<=16 && tb>=2&&tb<=16)
+	{
+		cout<<"The number is "<<convertBase(number,sb,tb);
+	}
+	else
+	{
+		cout<<"Impossible";
+	}
 	return 0;
 }
