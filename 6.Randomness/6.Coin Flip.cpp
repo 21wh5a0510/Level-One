@@ -8,8 +8,6 @@ int getNumOfFlips()
 	int current=rand()%2+1;
 	while(true)
 	{
-		current-=1;
-//		cout<<"current "<<current<<"\n\n";
 		nflips++;
 //		cout<<"nflips "<<nflips<<"\n\n";
 		if((prev==1 && current==1) || (prev==0&&current==0))
